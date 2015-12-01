@@ -1,5 +1,4 @@
 import re
-import numbers
 tt = "f/p/1\n\
 s1/100/20/10/10/20/40/0/0/0/0/0/0/0\n\
 s2/50/0/0/0/5/5/40/0/0/0/0/0/0"
@@ -11,7 +10,6 @@ class fheader():
         self.fname=splitted[0]
         self.fp=splitted[1]
         self.sp=splitted[2]
-        
     def pr(self):
         print("fname: %s, fp: %s, sp: %s" % (self.fname, self.fp, self.sp))
 
@@ -25,8 +23,6 @@ class sline():
         self.i=splitted[1]
         self.rl=splitted[2:]
         self.rl_sum=[x for x in self.rl if x.isdigit()]
-        #print(self.rl)
-        #print(self.rl_sum)
     def pr(self):
         if self.fts: return
         st = "sname: %s, in: %s, " % (self.sname, self.i)
@@ -50,10 +46,6 @@ class ft():
             print(s.pr())
             
     
-#a= fheader("f/p/1")
-#a.pr()
-#s= sline("a/x/1/2/3/4/x/6")
-#s.pr()
 a=ft(tt)
 a.pr()
 
